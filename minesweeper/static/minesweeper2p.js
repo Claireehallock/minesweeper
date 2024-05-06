@@ -11,19 +11,20 @@ let flag = false;
 let gameOver = false;
 
 var socket = io();
-socket.on('connect', function() {
-    socket.emit('message', {data: 'I\'m connected!'});
-});
+// socket.on('connect', function() {
+//     console.log("Connected")
+//     socket.emit('message', {data: 'I\'m connected!'});
+// });
 // var socket = io();
 //socket.on('connect', function() {
    // console.log("Connected")
    // socket.emit('message', "Hello there, Testing");
 //});
 
-socket.on("response", function(msg){
-    console.log("response:")
-    console.log(msg)
-})
+// socket.on('response', function(msg){
+//     console.log("response:")
+//     console.log(msg)
+// })
 
 window.onload = function(){
     startGame();
@@ -45,7 +46,7 @@ socket.on('join_confirmation', function(data) {
 
 
 // Handle custom server responses
-socket.on("response", function(msg) {
+socket.on('response', function(msg) {
     console.log("Server response:", msg);
 });
 
