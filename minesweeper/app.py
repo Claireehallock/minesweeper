@@ -413,5 +413,5 @@ def on_leave(data):
 ########game run###############
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
     socketio.run(app, debug=True)
