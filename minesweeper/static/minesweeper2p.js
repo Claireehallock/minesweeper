@@ -18,10 +18,10 @@ var socket = io.connect('/');
    // socket.emit('message', "Hello there, Testing");
 //});
 
-socket.on("response", function(msg){
-    console.log("response:")
-    console.log(msg)
-})
+// socket.on("response", function(msg){
+//     console.log("response:")
+//     console.log(msg)
+// })
 
 window.onload = function(){
     startGame();
