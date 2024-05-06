@@ -1,3 +1,5 @@
+import eventlet
+eventlet.monkey_patch()
 from random import randint
 from flask import session
 from flask import Flask, render_template, redirect, url_for, request
@@ -413,5 +415,5 @@ def on_leave(data):
 ########game run###############
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
     socketio.run(app, debug=True)
