@@ -5,16 +5,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{url_for('static', filename = 'minesweeper.css')}}">
-        <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-        <script src="{{ url_for('static', filename='minesweeper2p.js') }}"></script>
-        <script type="text/javascript" charset="utf-8">
-            var socket = io();
-            socket.on('connect', function() {
-                socket.emit('my event', {data: 'I\'m connected!'});
-            });
-        </script>
     </head>
     
     <body>
@@ -36,7 +28,13 @@
         <button id="flag">🚩</button>
 
 
-
+        <script src="{{ url_for('static', filename='minesweeper2p.js') }}"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket = io();
+            socket.on('connect', function() {
+                socket.emit('message', {data: 'I\'m connected!'});
+            });
+        </script>
 
 
     </body>

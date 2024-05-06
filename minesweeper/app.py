@@ -377,10 +377,14 @@ def add_cache_control_headers(response):
 ###########################
 #socketio stuff
 ########################
+@socketio.on('connect')
+def socket_connet():
+    print("Client Connected :D")
+
 @socketio.on('message')
 def handle_message(data):
-    print('received message: ' + data)
-    emit('response', {'data': 'Server received: ' + data})
+    print('received message: ' + str(data))
+    emit('response', {'data': 'Server received: ' + str(data)})
 
 # socketio.on('join_game')
 # def handle_join_game(data):
